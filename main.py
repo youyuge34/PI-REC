@@ -62,12 +62,14 @@ def main(mode=None, config=None):
         config.print()
         print('\nstart testing...\n')
         with torch.no_grad():
-            model.test()
+            model.test_G()
 
-    # refine mode
+    # refine the 2nd phase outputs
     elif config.MODE == 3:
+        config.print()
         print('\nstart refine...\n')
-        # TODO
+        with torch.no_grad():
+            model.test_R()
 
     elif config.MODE == 5:
         config.print()
@@ -92,7 +94,7 @@ def load_config(mode=None):
                         help='model checkpoints dir path ')
 
     # test mode
-    if mode == 2:
+    if mode == 2 or mode == 3:
         parser.add_argument('--output', type=str, help='path to the output directory')
 
     args = parser.parse_args()
@@ -123,8 +125,9 @@ def load_config(mode=None):
 
     # eval mode
     elif mode == 3:
-        config.MODE = 2
-        # TODO
+        config.MODE = 3
+        if args.output is not None:
+            config.RESULTS = args.output
 
     return config
 

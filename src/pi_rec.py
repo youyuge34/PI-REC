@@ -14,7 +14,7 @@ class PiRec():
         self.debug = False
         if config.MODE == 2 or config.MODE == 5:
             self.g_model = G_Model(config).to(config.DEVICE)
-        elif config.MODE == 6:
+        elif config.MODE == 6 or config.MODE == 3:
             self.r_model = R_Model(config).to(config.DEVICE)
 
         # test mode
@@ -22,12 +22,21 @@ class PiRec():
             self.test_dataset = Dataset(config, config.TEST_FLIST,
                                         augment=False, training=False)
 
+        # refinement mode from command line
+        if self.config.MODE == 3:
+            self.refine_dataset = Dataset(config, config.REFINE_FLIST,
+                                        augment=False, training=False)
+
+
         # self.samples_path = os.path.join(config.PATH, 'samples')
-        self.results_path = os.path.join(config.PATH, 'results')
+        self.results_path = os.path.join(config.PATH, 'results_2nd')
         self.results_path = os.path.join(self.results_path, 'km_{}_sigma_{}'.format(config.KM, config.SIGMA))
+
+        self.refine_path = os.path.join(config.PATH, 'results_3nd')
 
         if config.RESULTS is not None:
             self.results_path = os.path.join(config.RESULTS)
+            self.refine_path = os.path.join(config.RESULTS)
 
         if config.DEBUG is not None and config.DEBUG != 0:
             self.debug = True
@@ -35,10 +44,10 @@ class PiRec():
     def load(self):
         if self.config.MODE == 2 or self.config.MODE == 5:
             self.g_model.load()
-        elif self.config.MODE == 6:
+        elif self.config.MODE == 6 or self.config.MODE == 3:
             self.r_model.load()
 
-    def test(self):
+    def test_G(self):
         self.g_model.eval()
 
         create_dir(self.results_path)
@@ -76,6 +85,45 @@ class PiRec():
                 imsave(color_domain, os.path.join(self.results_path, fname + '_color_domain.' + fext))
 
         print('\nEnd test....')
+
+    def test_R(self):
+        self.r_model.eval()
+
+        create_dir(self.refine_path)
+
+        test_loader = DataLoader(
+            dataset=self.refine_dataset,
+            batch_size=1,
+        )
+
+        index = 0
+        for items in test_loader:
+            name = self.refine_dataset.load_name(index)
+            images, images_gray, edges, _ = self.cuda(*items)
+            # print('images size is {}, \n edges size is {}, \n color_domain size is {}'.format(images.size(), edges.size(), color_domain.size()))
+            index += 1
+
+            outputs = self.r_model(edges, images)
+            outputs = output_align(images, outputs)
+            outputs_merged = outputs
+
+            output = self.postprocess(outputs_merged)[0]
+            path = os.path.join(self.refine_path, name)
+            print(index, name)
+
+            imsave(output, path)
+
+            if self.debug:
+                images_input = self.postprocess(images)[0]
+                edges = self.postprocess(edges)[0]
+                # color_domain = self.postprocess(color_domain)[0]
+                fname, fext = name.split('.')
+                fext = 'png'
+                imsave(images_input, os.path.join(self.refine_path, fname + '_input.' + fext))
+                imsave(edges, os.path.join(self.refine_path, fname + '_edge.' + fext))
+                # imsave(color_domain, os.path.join(self.results_path, fname + '_color_domain.' + fext))
+
+        print('\nEnd refinement....')
 
     def draw(self, color_domain, edge):
         self.g_model.eval()

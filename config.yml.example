@@ -1,10 +1,11 @@
-MODE: 2             # 1: train, 2: test, 3: eval
+MODE: 2             # 1: train, 2: test, 3: refine, Hidden: (5:drawing tool, 6:refine in drawing tool)
 SEED: 10            # random seed
 GPU: [0]            # list of gpu ids
 DEBUG: 1            # turns on debugging mode
 VERBOSE: 0          # turns on verbose mode in the output console
 
-TEST_FLIST: ./datasets/celeba/val  # testing dir path used in test.py
+TEST_FLIST: ./datasets/celeba/val       # testing dir path used in test.py
+REFINE_FLIST: ./datasets/celeba/refine  # refinement dir path used in refine.py
 
 BATCH_SIZE: 4                 # input batch size for training
 INPUT_SIZE: 128               # image will be cropped into [INPUT_SIZE, INPUT_SIZE]
