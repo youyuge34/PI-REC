@@ -1,4 +1,4 @@
-MODE: 2             # 1: train, 2: test, 3: refine, Hidden: (5:drawing tool, 6:refine in drawing tool)
+MODE: 2             # 1: train, 2: test, 3: refine, 4: test+refine, Hidden: (5:drawing tool, 6:refine in drawing tool)
 SEED: 10            # random seed
 GPU: [0]            # list of gpu ids
 DEBUG: 1            # turns on debugging mode

@@ -16,6 +16,9 @@ def main(mode=None, config=None):
         mode (int): 1: train: TODO
         2: test
         3: refine 2nd phase outputs
+        4: test with refinement
+
+        Hidden mode in tool_draw.py:
         5: drawing
         6: Refinement
     """
@@ -71,6 +74,13 @@ def main(mode=None, config=None):
         with torch.no_grad():
             model.test_R()
 
+    # 2nd + 3rd phase
+    elif config.MODE == 4:
+        config.print()
+        print('\nstart test with refinement...\n')
+        with torch.no_grad():
+            model.test_G_R()
+
     elif config.MODE == 5:
         config.print()
         print('\n############\n###Drawing model loaded.###\n###########\n')
@@ -94,7 +104,7 @@ def load_config(mode=None):
                         help='model checkpoints dir path ')
 
     # test mode
-    if mode == 2 or mode == 3:
+    if mode == 2 or mode == 3 or mode == 4:
         parser.add_argument('--output', type=str, help='path to the output directory')
 
     args = parser.parse_args()
@@ -123,9 +133,15 @@ def load_config(mode=None):
         if args.output is not None:
             config.RESULTS = args.output
 
-    # eval mode
+    # refinement mode
     elif mode == 3:
         config.MODE = 3
+        if args.output is not None:
+            config.RESULTS = args.output
+
+    # test with refinement mode
+    elif mode == 4:
+        config.MODE = 4
         if args.output is not None:
             config.RESULTS = args.output
 
