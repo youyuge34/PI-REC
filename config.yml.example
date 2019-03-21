@@ -1,0 +1,12 @@
+MODE: 2             # 1: train, 2: test, 3: eval
+SEED: 10            # random seed
+GPU: [0]            # list of gpu ids
+DEBUG: 1            # turns on debugging mode
+VERBOSE: 0          # turns on verbose mode in the output console
+
+TEST_FLIST: ./datasets/celeba/val  # testing dir path used in test.py
+
+BATCH_SIZE: 4                 # input batch size for training
+INPUT_SIZE: 128               # image will be cropped into [INPUT_SIZE, INPUT_SIZE]
+SIGMA: 3.5                    # standard deviation of the Gaussian filter used in Canny edge detector (0: random, -1: no edge)
+KM: 3                         # number of colors in color domain, used in K-Means algorithm
