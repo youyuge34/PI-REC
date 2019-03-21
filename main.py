@@ -15,11 +15,13 @@ def main(mode=None, config=None):
     Args:
         mode (int): 1: train: TODO
         2: test
+        3: refine 2nd phase outputs
         5: drawing
+        6: Refinement
     """
 
-    if mode == 5:
-        config = load_config_draw(mode, config=config)
+    if mode == 5 or mode == 6:
+        config = load_config_costume(mode, config=config)
     else:
         config = load_config(mode)
 
@@ -62,14 +64,19 @@ def main(mode=None, config=None):
         with torch.no_grad():
             model.test()
 
-    # eval mode
+    # refine mode
     elif config.MODE == 3:
-        print('\nstart eval...\n')
+        print('\nstart refine...\n')
         # TODO
 
     elif config.MODE == 5:
         config.print()
         print('\n############\n###Drawing model loaded.###\n###########\n')
+        return model
+
+    elif config.MODE == 6:
+        # config.print()
+        print('\n############\n###Refinement model loaded.###\n###########\n')
         return model
 
 
@@ -122,15 +129,16 @@ def load_config(mode=None):
     return config
 
 
-def load_config_draw(mode, config):
-    r"""loads model config
+def load_config_costume(mode, config):
+    r"""loads model costume config
 
     Args:
         mode (int): 5: draw
+        mode (int): 6: refinement
     """
     print('load_config_demo----->')
     if mode == 5:
         config.MODE = 5
-
+    elif mode == 6:
+        config.MODE = 6
     return config
-

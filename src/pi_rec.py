@@ -3,7 +3,7 @@ import os
 import numpy as np
 from torch.utils.data import DataLoader
 from .dataset import Dataset
-from .models import G_Model
+from .models import G_Model, R_Model
 from .utils import resize, create_dir, imsave, to_tensor, output_align
 
 
@@ -12,7 +12,10 @@ class PiRec():
         self.config = config
 
         self.debug = False
-        self.g_model = G_Model(config).to(config.DEVICE)
+        if config.MODE == 2 or config.MODE == 5:
+            self.g_model = G_Model(config).to(config.DEVICE)
+        elif config.MODE == 6:
+            self.r_model = R_Model(config).to(config.DEVICE)
 
         # test mode
         if self.config.MODE == 2:
@@ -30,7 +33,10 @@ class PiRec():
             self.debug = True
 
     def load(self):
-        self.g_model.load()
+        if self.config.MODE == 2 or self.config.MODE == 5:
+            self.g_model.load()
+        elif self.config.MODE == 6:
+            self.r_model.load()
 
     def test(self):
         self.g_model.eval()
@@ -45,11 +51,11 @@ class PiRec():
         index = 0
         for items in test_loader:
             name = self.test_dataset.load_name(index)
-            images, images_gray, edges, images_blur = self.cuda(*items)
-            # print('images size is {}, \n edges size is {}, \n images_blur size is {}'.format(images.size(), edges.size(), images_blur.size()))
+            images, images_gray, edges, color_domain = self.cuda(*items)
+            # print('images size is {}, \n edges size is {}, \n color_domain size is {}'.format(images.size(), edges.size(), color_domain.size()))
             index += 1
 
-            outputs = self.g_model(images, edges, images_blur)
+            outputs = self.g_model(edges, color_domain)
             outputs = output_align(images, outputs)
             outputs_merged = outputs
 
@@ -62,12 +68,12 @@ class PiRec():
             if self.debug:
                 images_input = self.postprocess(images)[0]
                 edges = self.postprocess(edges)[0]
-                images_blur = self.postprocess(images_blur)[0]
+                color_domain = self.postprocess(color_domain)[0]
                 fname, fext = name.split('.')
                 fext = 'png'
                 imsave(images_input, os.path.join(self.results_path, fname + '_input.' + fext))
                 imsave(edges, os.path.join(self.results_path, fname + '_edge.' + fext))
-                imsave(images_blur, os.path.join(self.results_path, fname + '_color_domain.' + fext))
+                imsave(color_domain, os.path.join(self.results_path, fname + '_color_domain.' + fext))
 
         print('\nEnd test....')
 
@@ -87,8 +93,32 @@ class PiRec():
         if self.config.DEBUG:
             print('In model.draw():---> \n color domain size is {}, edges size is {}'.format(color_domain.size(),
                                                                                              edge.size()))
+        outputs = self.g_model(edge, color_domain)
 
-        outputs = self.g_model(None, edge, color_domain)
+        outputs = self.postprocess(outputs)[0]
+        output = outputs.cpu().numpy().astype(np.uint8).squeeze()
+        edge = self.postprocess(edge)[0]
+        edge = edge.cpu().numpy().astype(np.uint8).squeeze()
+
+        return output
+
+    def refine(self, img_blur, edge):
+        self.r_model.eval()
+        size = self.config.INPUT_SIZE
+        # color_domain = resize(color_domain, size, size, interp='lanczos')
+        edge = resize(edge, size, size, interp='lanczos')
+        edge[edge <= 69] = 0
+        edge[edge > 69] = 255
+
+        img_blur = to_tensor(img_blur)
+        edge = to_tensor(edge)
+
+        img_blur, edge = self.cuda(img_blur, edge)
+
+        if self.config.DEBUG:
+            print('In model.refine():---> \n img_blur size is {}, edges size is {}'.format(img_blur.size(),
+                                                                                             edge.size()))
+        outputs = self.r_model(edge, img_blur)
 
         outputs = self.postprocess(outputs)[0]
         output = outputs.cpu().numpy().astype(np.uint8).squeeze()

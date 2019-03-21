@@ -4,11 +4,10 @@
 ===============================================================================
 Interactive Image Drawing tool of PI-REC.
 
+Paper: PI-REC: Progressive Image Reconstruction Network With Edge and Color Domain 2019.3
 
-USAGE:
+Command:
     python tool_draw.py --path <your weights directory path>
-
-
 
 README FIRST:
     Four windows will show up, one for color domain, one for edge, one for output and a pane.
@@ -26,6 +25,11 @@ Key 's' - To save the output
 
 Key 'r' - To reset all
 Key 'q' - To quit
+
+                #####################################
+                #####  Author: youyuge34@github  ####
+                #####    License-CC BY·NC 4.0    ####
+                #####################################
 ===============================================================================
 """
 
@@ -149,7 +153,7 @@ def onmouse_edge(event, x, y, flags, param):
         cv.circle(edge, (x, y), radius, BLACK, THICKNESS, lineType=cv.LINE_AA)
 
 
-def check_load(args):
+def check_load_G(args):
     """
     Check the directory and weights files. Load the config file.
     """
@@ -171,11 +175,36 @@ def check_load(args):
     return config
 
 
-def load_model(config):
+def check_load_R(args):
     """
-    Load model, the key function to interact with backend.
+    Check the directory and weights files. Load the config file.
+    """
+
+    R_weight_files = list(glob.glob(os.path.join(args.path, 'R_Model_gen*.pth')))
+    if len(R_weight_files) == 0:
+        raise FileNotFoundError('Weights file <R_Model_gen*.pth> cannot be found under path: ' + args.path)
+
+    config_path = os.path.join(args.path, 'config.yml')
+
+    # load config file
+    config = Config(config_path)
+
+    return config
+
+
+def load_model_G(config):
+    """
+    Load generate phase model, the key function to interact with backend.
     """
     model = main(mode=5, config=config)
+    return model
+
+
+def load_model_R(config):
+    """
+    Load refinement phase model, the key function to interact with backend.
+    """
+    model = main(mode=6, config=config)
     return model
 
 
@@ -189,7 +218,23 @@ def model_process(color_domain, edge):
     # print(color_domain.shape, edge.shape)
     size_origin = color_domain.shape[:2]
     img = cv.cvtColor(color_domain, cv.COLOR_BGR2RGB)
-    result = model.draw(img, edge)
+    result = model_G.draw(img, edge)
+    result = cv.resize(result, size_origin)
+    result = cv.cvtColor(result, cv.COLOR_RGB2BGR)
+    return result
+
+
+def model_refine(img_blur, edge):
+    """
+    Key function to refine image from 2nd phase output.
+    :param img_blur: channel=3
+    :param edge: channel=1
+    :return: refinement
+    """
+    # print(color_domain.shape, edge.shape)
+    size_origin = img_blur.shape[:2]
+    img_blur = cv.cvtColor(img_blur, cv.COLOR_BGR2RGB)
+    result = model_R.refine(img_blur, edge)
     result = cv.resize(result, size_origin)
     result = cv.cvtColor(result, cv.COLOR_RGB2BGR)
     return result
@@ -231,11 +276,16 @@ if __name__ == '__main__':
     parser.add_argument('-p', '--path', type=str, help='path of model weights files <.pth>')
     parser.add_argument('-c', '--canny', type=float, default=3, help='sigma of canny')
     parser.add_argument('-k', '--kmeans', type=int, default=3, help='color numbers of kmeans')
+    parser.add_argument('-r', '--refinement', action='store_true', help='load refinement model')
     args = parser.parse_args()
 
     # check the exist of path and the weights files
-    config = check_load(args)
-    model = load_model(config)
+    config = check_load_G(args)
+    model_G = load_model_G(config)
+
+    if args.refinement:
+        config = check_load_R(args)
+        model_R = load_model_R(config)
 
     WIN_SIZE = config.INPUT_SIZE
 
@@ -260,14 +310,14 @@ if __name__ == '__main__':
         if not color_domain_file.endswith('.jpg') and not color_domain_file.endswith('.png'):
             exit("color_domain file must be .jpg or .png")
         edge, color_domain = inital_pics(edge_file, color_domain_file)
-        print(edge.shape, color_domain.shape, type(edge), type(color_domain))
+        # print(edge.shape, color_domain.shape, type(edge), type(color_domain))
     elif MODE == "3":
         msgbox("Choose a colorful picture", title="PI-REC")
         pic_file = fileopenbox(msg='Select an edge', title='PI-REC', filetypes=[['*.png', '*.jpg', 'Image Files']])
         if not pic_file.endswith('.jpg') and not pic_file.endswith('.png'):
             exit("edge file must be .jpg or .png")
         edge, color_domain = inital_colorful_pic(pic_file, args.canny, args.kmeans)
-        print(edge.shape, color_domain.shape, type(edge), type(color_domain))
+        # print(edge.shape, color_domain.shape, type(edge), type(color_domain))
         # print(edge[64])
     else:
         exit(0)
@@ -369,4 +419,12 @@ if __name__ == '__main__':
                 # cv.imwrite(path, cv.resize(edge,(128,128),interpolation=cv.INTER_NEAREST))
                 cv.imwrite(path, edge)
                 print('Drawing edge is saved to', path)
+        elif k == ord('h'):
+            msgbox(__doc__, title="PI-REC")
+        elif k == ord('u'):
+            if model_R is not None:
+                print("\nRefinement using output and edge...")
+                output = model_refine(output, edge)
+                print("\nFinished!")
+
     cv.destroyAllWindows()
