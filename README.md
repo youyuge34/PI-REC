@@ -40,6 +40,18 @@ PI-REC     (WIP)
 
 English | [中文版介绍](#jump_zh)     
 
+Introduction
+-----
+
+We propose a universal image reconstruction method to represent detailed images purely from binary sparse edge and color domain.     
+Find more details in our paper: [arXiv]()
+
+
+🏳️‍🌈 Demo show time 🏳️‍🌈
+------
+<p align="center">
+<img src="files/edit.jpg">
+</p>
 
 <span id="jump_zh">中文版介绍🇨🇳 </span>
 -----
