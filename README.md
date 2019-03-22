@@ -21,7 +21,11 @@ PI-REC     (WIP)
  
 English | [中文版介绍](#jump_zh)
 
-<center>test</center>
+<p align="center">   
+
+test    
+
+</p>
 
 
 <span id="jump_zh">中文版介绍🇨🇳 </span>
