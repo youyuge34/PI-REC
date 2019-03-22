@@ -23,7 +23,16 @@ English | [中文版介绍](#jump_zh)
 
 
 <p align="center">
-    <em>FastAPI framework, high performance, easy to learn, fast to code, ready for production</em>
+    <em>When I was a schoolchild, </em>
+</p>
+<p align="center">
+    <em>I dreamed about becoming a painter. </em>
+</p>
+<p align="center">
+    <em>With PI-REC, we realize it nowadays. </em>
+</p>
+<p align="center">
+    <em>For you, for everyone.</em>
 </p>
 
 
