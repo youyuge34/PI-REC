@@ -19,12 +19,11 @@ PI-REC     (WIP)
 
 -----
  
-English | [中文版介绍](#jump_zh)
+English | [中文版介绍](#jump_zh)     
 
-<p align="center">   
 
-test    
-
+<p align="center">
+    <em>FastAPI framework, high performance, easy to learn, fast to code, ready for production</em>
 </p>
 
 
