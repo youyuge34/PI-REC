@@ -282,6 +282,7 @@ if __name__ == '__main__':
     # check the exist of path and the weights files
     config = check_load_G(args)
     model_G = load_model_G(config)
+    model_R = None
 
     if args.refinement:
         config = check_load_R(args)
