@@ -13,14 +13,15 @@ PI-REC     (WIP)
 			 alt="License">
 </p>
 
-##### Progressive Image Reconstruction Network With Edge and Color Domain     
+### Progressive Image Reconstruction Network With Edge and Color Domain     
 
 [arXiv]() | [BibTex](#citation)
 
 -----
- 
-English | [中文版介绍](#jump_zh)     
 
+<p align="center">
+<img src="files/banner.png" width="720" height="240">
+</p>
 
 <p align="center">
     <em>When I was a schoolchild, </em>
@@ -34,6 +35,10 @@ English | [中文版介绍](#jump_zh)
 <p align="center">
     <em>For you, for everyone.</em>
 </p>
+
+-----
+
+English | [中文版介绍](#jump_zh)     
 
 
 <span id="jump_zh">中文版介绍🇨🇳 </span>
