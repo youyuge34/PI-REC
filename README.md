@@ -40,18 +40,31 @@ PI-REC     (WIP)
 
 English | [中文版介绍](#jump_zh)     
 
+
+
+🏳️‍🌈 Demo show time 🏳️‍🌈
+------
+#### Draft2Painting
+<p align="center">
+<img src="files/edit.jpg">
+</p>
+<p align="center">
+<img src="files/inter1.gif" >
+<img src="files/inter2.gif" >
+<img src="files/inter3.gif" >
+</p>
+
+#### Tool operation
+<p align="center">
+<img src="files/frame1.gif">   
+<img src="files/frame2_3.gif">
+</p>
+
 Introduction
 -----
 
 We propose a universal image reconstruction method to represent detailed images purely from binary sparse edge and color domain.     
 Find more details in our paper: [arXiv]()
-
-
-🏳️‍🌈 Demo show time 🏳️‍🌈
-------
-<p align="center">
-<img src="files/edit.jpg">
-</p>
 
 <span id="jump_zh">中文版介绍🇨🇳 </span>
 -----

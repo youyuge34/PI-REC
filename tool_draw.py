@@ -333,7 +333,7 @@ if __name__ == '__main__':
     cv.moveWindow('output', edge.shape[1] + 80, 280)
 
     # Create a black image, a window
-    pane = np.zeros((128, 376, 3), np.uint8)
+    pane = np.zeros((128, 420, 3), np.uint8)
     cv.namedWindow('pane')
     # create trackbars for color change
     cv.createTrackbar('R', 'pane', 0, 255, nothing)
