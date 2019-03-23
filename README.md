@@ -46,18 +46,18 @@ English | [中文版介绍](#jump_zh)
 ------
 #### Draft2Painting
 <p align="center">
-<img src="files/edit.jpg" width="720">
+<img src="files/edit.jpg" width="840">
 </p>
 <p align="center">
-<img src="files/inter1.gif" width="256" height="128">
-<img src="files/inter2.gif" width="256" height="128">
-<img src="files/inter3.gif" width="256" height="128">
+<img src="files/inter1.gif" width="224" height="112">
+<img src="files/inter2.gif" width="224" height="112">
+<img src="files/inter3.gif" width="224" height="112">
 </p>
 
 #### Tool operation
 <p align="center">
-<img src="files/frame1.gif" width="360">   
-<img src="files/frame2_3.gif" width="360">
+<img src="files/frame1.gif" width="380">   
+<img src="files/frame2_3.gif" width="380">
 </p>
 
 Introduction
