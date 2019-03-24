@@ -111,3 +111,7 @@ Key `x` | To save the binary edge
 Key `c` | To save the color domain
 Key `s` | To save the output
 Key `q` | To quit
+
+<span id="jump_zh">使用手册 </span>
+------
+TODO

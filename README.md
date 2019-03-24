@@ -38,9 +38,10 @@ PI-REC     (WIP)
 
 -----
 
-English | [中文版介绍](#jump_zh)     
+**English | [中文版](#jump_zh)**     
 
-
+<br>
+<br>
 
 🏳️‍🌈 Demo show time 🏳️‍🌈
 ------
@@ -60,6 +61,9 @@ English | [中文版介绍](#jump_zh)
 <img src="files/demo2.gif" width="380">
 </p>
 
+<br>
+<br>
+
 Introduction
 -----
 
@@ -68,9 +72,6 @@ Here is the open source code and the drawing tool.<br>
 *\*The codes of training for release are no completed yet, also waiting for release license of lab.* <br>   
 **Find more details in our paper: [Paper on arXiv]()**<br>
 <br>
-<br>
-<br>
-
 
 Quick Overview of Paper
 -----
@@ -118,10 +119,18 @@ So make sure your path now is: `./models/celeba/<xxxxx.pth>`
 
 #### Files are ready now! Read the [User Manual](USAGE.md) for firing operations.
 
-
+<br>
+<br>
+<br>
 
 <span id="jump_zh">中文版介绍🇨🇳 </span>
 -----
+TODO
+
+
+Acknowledgment
+-----
+Code structure is modified from [Anime-InPainting](https://github.com/youyuge34/Anime-InPainting), which is based on [Edge-Connect](https://github.com/knazeri/edge-connect).
+
 <span id="citation"> BibTex </span>
 -----
-
