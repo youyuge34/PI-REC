@@ -112,6 +112,10 @@ Key `c` | To save the color domain
 Key `s` | To save the output
 Key `q` | To quit
 
+<br>
+<br>
+<br>
+
 <span id="jump_zh">使用手册 </span>
 ------
 TODO
