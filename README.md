@@ -48,17 +48,17 @@ English | [中文版介绍](#jump_zh)
 <p align="center">
 <img src="files/edit.jpg" width="840">
 </p>
-<p align="center" class="third">
+<center class="third">
 <img src="files/inter1.gif" width="224" height="112">
 <img src="files/inter2.gif" width="224" height="112">
 <img src="files/inter3.gif" width="224" height="112">
-</p>
+</center>
 
 #### Tool operation
-<p align="center" class="half">
+<center class="half">
 <img src="files/frame1.gif" width="380">   
 <img src="files/frame2_3.gif" width="380">
-</p>
+</center>
 
 Introduction
 -----
