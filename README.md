@@ -37,11 +37,9 @@ PI-REC     (WIP)
 </p>
 
 -----
-
-**English | [中文版](#jump_zh)**     
-
 <br>
 <br>
+<center>**English | [中文版](#jump_zh)**</center>
 
 🏳️‍🌈 Demo show time 🏳️‍🌈
 ------
