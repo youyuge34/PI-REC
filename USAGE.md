@@ -70,7 +70,7 @@ Command | Meaning
 If everything is loaded successfully, a window shows as below:
  
 <p align="center">
-<img src="files/tool_1.png" width="640">
+<img src="files/tool_1.png" width="400">
 </p>
 
 The drawing tool has three modes:
@@ -83,7 +83,7 @@ We strongly recommend you to draw from this mode. We provide some anime edges an
 You can get more edges and color domains by yourself using the **Command Line Mode** above. The testing results contain extracted edges and color domains by default (`DEBUG: 1` in `config.yml`).
 
 <p align="center">
-<img src="files/mode2.gif">   
+<img src="files/mode2.gif" width="400">   
 </p>
 
 3. **Drawing from picture (Recommended too)**<br>
@@ -92,7 +92,7 @@ For instance, just choose the image in the testing datasets. Optionally, use the
 the sparsity of Canny and K-means (both default=3).
 
 <p align="center">
-<img src="files/mode3.gif">   
+<img src="files/mode3.gif" width="400">   
 </p>
 
 Four windows will show up, one for color domain, one for edge, one for output and a pane. Switch your typewriting into ENG first.
