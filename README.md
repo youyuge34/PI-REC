@@ -123,7 +123,7 @@ So make sure your path now is: `./models/celeba/<xxxxx.pth>`
 <br>
 <br>
 
-<span id="jump_zh">中文版介绍🇨🇳 </span>
+<span id="jump_zh">中文版介绍 :mahjong: </span>
 -----
 TODO
 
