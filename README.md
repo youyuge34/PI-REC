@@ -42,6 +42,7 @@ PI-REC     (WIP)
 <p align="center"><b>English | <a href="#jump_zh">中文版</a></b> 
 </p>
 <br>
+
 🏳️‍🌈 Demo show time 🏳️‍🌈
 ------
 #### Draft2Painting
