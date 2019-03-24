@@ -75,7 +75,7 @@ Here is the open source code and the drawing tool.<br>
 Quick Overview of Paper
 -----
 
-#### What can we do?
+### What can we do?
 <p align="center">
 <img src="files/s_banner4.jpg" width="720">   
 </p> 
@@ -85,7 +85,7 @@ Quick Overview of Paper
 - Figure (c): User-defined edge-to-image **(E2I)** translation.<br>
 <br>
 
-#### Model Architecture
+### Model Architecture
 We strongly recommend you to understand our model architecture before running our drawing tool. Refer to the paper for more details.<br>
 
 <p align="center">
@@ -105,7 +105,7 @@ We strongly recommend you to understand our model architecture before running ou
 pip install -r requirements.txt
 ```
 
-## Usage
+## <span id='usage'>Usage</span>
 #### We provide two ways in the project:
 - **Basic command line mode** for batch test  
 - **Drawing tool GUI mode** for creation
