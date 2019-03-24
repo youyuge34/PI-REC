@@ -63,8 +63,9 @@ English | [中文版介绍](#jump_zh)
 Introduction
 -----
 
-We propose a universal image reconstruction method to represent detailed images purely from binary sparse edge and flat color domain.<br>
-Here is the open source code and the drawing tool.*\*The codes of training for release are no completed yet, also waiting for release license of lab.* <br>   
+We propose a universal image reconstruction method to represent detailed images purely from binary sparse edge and flat color domain.
+Here is the open source code and the drawing tool.<br>
+*\*The codes of training for release are no completed yet, also waiting for release license of lab.* <br>   
 **Find more details in our paper: [Paper on arXiv]()**<br>
 <br>
 <br>
@@ -74,9 +75,9 @@ Here is the open source code and the drawing tool.*\*The codes of training for r
 Quick Overview of Paper
 -----
 
-**What can we do?**<br>
+#### What can we do?
 <p align="center">
-<img src="files/s_banner4.jpg" width="840">   
+<img src="files/s_banner4.jpg" width="720">   
 </p> 
 
 - Figure (a): Image reconstruction from extreme sparse inputs.<br>
@@ -84,7 +85,7 @@ Quick Overview of Paper
 - Figure (c): User-defined edge-to-image **(E2I)** translation.<br>
 <br>
 
-**Model Architecture**<br>
+#### Model Architecture
 We strongly recommend you to understand our model architecture before running our drawing tool. Refer to the paper for more details.<br>
 
 <p align="center">
@@ -115,7 +116,7 @@ Firstly, follow steps below to prepare pre-trained models with patience:
 So make sure your path now is: `./models/celeba/<xxxxx.pth>`
 3. Complete the above [Prerequisites](#pre) and [Installation](#ins)
 
-#### Files are ready now! Read the [User Manual](USAGE.md) for firing operations.
+#### Files are ready now! Read the <a href="USAGE.md" target="_blank">User Manual</a> for firing operations.
 
 
 
