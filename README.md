@@ -56,8 +56,8 @@ English | [中文版介绍](#jump_zh)
 
 #### Tool operation
 <p align="center" class="half">
-<img src="files/frame1.gif" width="380">   
-<img src="files/frame2_3.gif" width="380">
+<img src="files/demo1.gif" width="380">   
+<img src="files/demo2.gif" width="380">
 </p>
 
 Introduction

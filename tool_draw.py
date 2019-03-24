@@ -7,24 +7,27 @@ Interactive Image Drawing tool of PI-REC.
 Paper: PI-REC: Progressive Image Reconstruction Network With Edge and Color Domain 2019.3
 
 Command:
-    python tool_draw.py --path <your weights directory path>
+    python tool_draw.py --path <your weights directory path> -r
 
 README FIRST:
     Four windows will show up, one for color domain, one for edge, one for output and a pane.
     [Important] Switch your typewriting into ENG first.
 
-Key '[' - To make the brush thickness smaller
-Key ']' - To make the brush thickness larger
 
-Key 'g' - To reconstruct the image from edge and color domain
-Key 'Alt' - To absorb mouse pointer color in color domain (the mouse point must be moving at the same time)
+Key | Description
 
-Key 'x' - To save the binary edge
-Key 'c' - To save the color domain
-Key 's' - To save the output
-
-Key 'r' - To reset all
-Key 'q' - To quit
+Mouse `Left` | Draw
+Mouse `Right` | Erase
+Key `h` | Show the help message box.
+Key `[` | To make the brush thickness smaller
+Key `]` | To make the brush thickness larger
+Key `g` | To reconstruct the image from edge and color domain
+Key `u` | To refine the output only when `-r` is added in command line
+Key `Alt` | To absorb mouse pointer color in color domain (the mouse must be moving at the same time)
+Key `x` | To save the binary edge
+Key `c` | To save the color domain
+Key `s` | To save the output
+Key `q` | To quit
 
                 #####################################
                 #####  Author: youyuge34@github  ####
