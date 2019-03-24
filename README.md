@@ -111,7 +111,7 @@ pip install -r requirements.txt
 - **Drawing tool GUI mode** for creation
 
 Firstly, follow steps below to prepare pre-trained models with patience:
-1. Download the pre-trained models you want here: [Google Drive]() | [Baidu](https://pan.baidu.com/s/1oX7ckJrOozA7oYwzeFHhSA) (Extraction Code: 9qn1)
+1. Download the pre-trained models you want here: <a href="https://drive.google.com/open?id=1Oc-MZ0O2sZszes2_QF12dflDp6uIBpGR" target="_blank">Google Drive</a> | <a href=https://pan.baidu.com/s/1oX7ckJrOozA7oYwzeFHhSA" target="_blank">Baidu</a> (Extraction Code: 9qn1)
 2. Unzip the `.7z` and put it under your dir `./models/`.<br>
 So make sure your path now is: `./models/celeba/<xxxxx.pth>`
 3. Complete the above [Prerequisites](#pre) and [Installation](#ins)
