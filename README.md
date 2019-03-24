@@ -125,8 +125,64 @@ So make sure your path now is: `./models/celeba/<xxxxx.pth>`
 
 <span id="jump_zh">中文版介绍 :mahjong: </span>
 -----
-TODO
 
+Demo演示
+-----
+自己看上面的咯~
+
+简介
+-----
+
+我们提出了一种渐进式训练方法 PI-REC，能从超稀疏二值边缘以及色块中还原重建真实图像。
+这里包含了测试代码以及交互式绘画工具。<br>
+*\*由于训练过程过于复杂，用于训练的发布版代码还未完成* <br>   
+**在我们的论文中你可以获得更多信息: [Paper on arXiv]()**<br>
+<br>
+
+论文概览
+-----
+
+### PI-REC能做啥？
+<p align="center">
+<img src="files/s_banner4.jpg" width="720">   
+</p> 
+
+- Figure (a): 超稀疏输入信息重建原图。<br>
+- Figure (b): 手绘草图转换。<br>
+- Figure (c): 用户自定义的 edge-to-image **(E2I)** 转换.<br>
+<br>
+
+### 模型结构
+我们强烈建议你先仔细阅读论文熟悉我们的模型结构，对运行使用大有裨益。
+<p align="center">
+<img src="files/architecture_v5.png" width="960">   
+</p>
+
+## 基础环境
+- Python 3
+- PyTorch `1.0` (`0.4` 会报错)
+- NVIDIA GPU + CUDA cuDNN （当前版本已可选cpu，请修改`config.yml`中的`DEVICE`）
+
+## 第三方库安装
+- Clone this repo
+- 安装PyTorch和torchvision --> http://pytorch.org
+- 安装 python requirements:
+```bash
+pip install -r requirements.txt
+```
+
+## <span id='usage_zh'>运行使用</span>
+#### 我们提供以下两种方式运行：
+- **基础命令行模式** 用来批处理测试整个文件夹的图片 
+- **绘画GUI工具模式** 用来创作
+
+首先，请耐心地按照以下步骤做准备：
+1. 在这里下载你想要的预训练模型文件：<a href="https://drive.google.com/open?id=1Oc-MZ0O2sZszes2_QF12dflDp6uIBpGR" target="_blank">Google Drive</a> | <a href="https://pan.baidu.com/s/1oX7ckJrOozA7oYwzeFHhSA" target="_blank">Baidu</a> (提取码: 9qn1)
+2. 解压，放到目录`./models`下<br>
+现在你的目录应该像这样： `./models/celeba/<xxxxx.pth>`
+3. 完成上面的基础环境和第三方库安装
+
+#### 啦啦啦啦，准备工作已完成，阅读[用户手册](USAGE.md#jump_zh)来开始运行程序咯~
 
 Acknowledgment
 -----
