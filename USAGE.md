@@ -54,7 +54,7 @@ Phase | Command | Dataset loc | Description
 - Optional changeable options: `DEBUG`, `INPUT_SIZE`, `SIGMA` and `KM`. Refer to the `config.yml` for details.
 
 ## 2.Drawing GUI Mode
-This mode is a simple interactive demo written by OpenCV and easygui, which has been shown before.<br>
+This mode is a simple interactive demo written by OpenCV and easygui, which has been shown before.<br><br>
 **IMPORTANT**: The OpenCV window size of 128 is too small to draw, under Win10 we strongly recommend you to change the scale and layout to 150% in the display setting.  
 
 ```bash
@@ -155,11 +155,11 @@ Key `q` | To quit
  *2nd + 3rd* | python test_with_refine.py -p models/celeba | `TEST_FLIST` in `config.yml` |  Reconstruct and refine
 
 - 在模型对应的`config.yml`中，`TEST_FLIST` 和 `REFINE_FLIST` 决定了测试数据集的位置，是最重要的参数。
-<br>
 - （可选）可改的配置参数：`DEBUG`, `INPUT_SIZE`, `SIGMA` 和 `KM`. 具体含义请看`config.yml`。
 
 ## 2.绘画GUI工具模式
 我们使用OpenCv和easygui做了一个简单的交互式绘图demo，README中已经展示过了。<br>
+<br>
 **重要**： 尺寸为128的OpenCV窗口太小了，不好绘画，强烈建议win10的你在显示设置-->缩放与布局 调整到150%+
 
 ```bash
@@ -171,7 +171,7 @@ python tool_draw.py -p models/celeba -r
 `-p` or `--path` | 读取的模型位置
 `-r` or `--refinement` | 手动加上这个才会读取 *Refinement Phase*  (需要 `R_Model_gen_xxx.pth`)
 `-c` or `--canny` | *超参数：* sigma of canny (default=3)
-`-k` or `--kmeans` | *超参数:* color cluster numbers of K-means (default=3)
+`-k` or `--kmeans` | *超参数：* color cluster numbers of K-means (default=3)
 
 如果一切运行顺利，会显示以下窗口界面：
 <p align="center">

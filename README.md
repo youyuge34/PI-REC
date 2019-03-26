@@ -1,4 +1,4 @@
-PI-REC     (WIP)
+PI-REC     
 ------------------------------------------------------------------------------------------------------
 <p align="left">
 		<img src="https://img.shields.io/badge/version-0.1-brightgreen.svg?style=flat-square"
@@ -15,7 +15,7 @@ PI-REC     (WIP)
 
 **Progressive Image Reconstruction Network With Edge and Color Domain** <br>
 
-### [Paper]() | [BibTex](#citation)
+### [Paper on arXiv](https://arxiv.org/abs/1903.10146) | [Paper Read Online](https://www.arxiv-vanity.com/papers/1903.10146/) | [BibTex](#citation)
 
 -----
 
@@ -70,7 +70,7 @@ Introduction
 We propose a universal image reconstruction method to represent detailed images purely from binary sparse edge and flat color domain.
 Here is the open source code and the drawing tool.<br>
 *\*The codes of training for release are no completed yet, also waiting for release license of lab.* <br>   
-**Find more details in our paper: [Paper on arXiv]()**<br>
+**Find more details in our paper: [Paper on arXiv](https://arxiv.org/abs/1903.10146)**<br>
 <br>
 
 Quick Overview of Paper
@@ -136,7 +136,7 @@ Demo演示
 我们提出了一种渐进式训练方法 PI-REC，能从超稀疏二值边缘以及色块中还原重建真实图像。
 这里包含了测试代码以及交互式绘画工具。<br>
 *\*由于训练过程过于复杂，用于训练的发布版代码还未完成* <br>   
-**在我们的论文中你可以获得更多信息: [Paper on arXiv]()**<br>
+**在我们的论文中你可以获得更多信息: [Paper on arXiv](https://arxiv.org/abs/1903.10146)**<br>
 <br>
 
 论文概览
@@ -190,3 +190,11 @@ Code structure is modified from [Anime-InPainting](https://github.com/youyuge34/
 
 <span id="citation"> BibTex </span>
 -----
+```
+@article{you2019pirec,
+  title={PI-REC: Progressive Image Reconstruction Network With Edge and Color Domain},
+  author={You, Sheng and You, Ning and Pan, Minxue},
+  journal={arXiv preprint arXiv:1903.10146},
+  year={2019}
+}
+```
