@@ -270,6 +270,18 @@ def inital_colorful_pic(file, sigma, kmeans):
     return out_edge, out_blur
 
 
+def lighter(output):
+    alpha = 1.1
+    res = np.uint8(np.clip((alpha * output + 125*(1-alpha)), 0, 255))
+    # (b, g, r) = cv.split(output)
+    # bH = cv.equalizeHist(b)
+    # gH = cv.equalizeHist(g)
+    # rH = cv.equalizeHist(r)
+    # # 合并每一个通道
+    # res = cv.merge((bH, gH, rH))
+    return res
+
+
 if __name__ == '__main__':
 
     # print documentation
@@ -430,5 +442,7 @@ if __name__ == '__main__':
                 print("\nRefinement using output and edge...")
                 output = model_refine(output, edge)
                 print("\nFinished!")
+        elif k == ord('l'):
+            output = lighter(output)
 
     cv.destroyAllWindows()
