@@ -30,10 +30,10 @@ PI-REC
     <em>I dreamed about becoming a painter. </em>
 </p>
 <p align="center">
-    <em>With PI-REC, we realize it nowadays. </em>
+    <em>With PI-REC, we make this dream come true, </em>
 </p>
 <p align="center">
-    <em>For you, for everyone.</em>
+    <em>It is for you, for everyone.</em>
 </p>
 
 -----
@@ -107,11 +107,11 @@ pip install -r requirements.txt
 ```
 
 ## <span id='usage'>Usage</span>
-#### We provide two ways in the project:
+#### We provide two ways in this project:
 - **Basic command line mode** for batch test  
-- **Drawing tool GUI mode** for creation
+- **Drawing tool GUI mode** for man-machine interactive creation
 
-Firstly, follow steps below to prepare pre-trained models with patience:
+Firstly, follow steps below with patience to prepare pre-trained models:
 1. Download the pre-trained models you want here: <a href="https://drive.google.com/open?id=1Oc-MZ0O2sZszes2_QF12dflDp6uIBpGR" target="_blank">Google Drive</a> | <a href="https://pan.baidu.com/s/1oX7ckJrOozA7oYwzeFHhSA" target="_blank">Baidu</a> (Extraction Code: 9qn1)
 2. Unzip the `.7z` and put it under your dir `./models/`.<br>
 So make sure your path now is: `./models/celeba/<xxxxx.pth>`
@@ -133,9 +133,9 @@ Demo演示
 简介
 -----
 
-我们提出了一种基于GAN的渐进式训练方法 PI-REC，能从超稀疏二值边缘以及色块中还原重建真实图像。
-这属于*图像重建，图像翻译，条件图像生成，AI自动绘画*的前沿交叉领域，而非简单的以图搜图。更多相关可以阅读论文里的
-Related Work。<br>
+我们提出了一种基于GAN的渐进式训练方法 PI-REC，它能从超稀疏二值边缘以及色块中还原重建真实图像。
+这项任务属于*图像重建，图像翻译，条件图像生成，AI自动绘画*的前沿交叉领域，而非简单的以图搜图。阅读论文中的
+Related Work部分可以了解更多相关。<br>
 这里包含了测试代码以及交互式绘画工具。<br>
 *\*由于训练过程过于复杂，用于训练的发布版代码还未完成* <br>   
 **在我们的论文中你可以获得更多信息(强烈推荐阅读): [Paper on arXiv](https://arxiv.org/abs/1903.10146)**<br>
@@ -155,7 +155,7 @@ Related Work。<br>
 <br>
 
 ### 模型结构
-我们强烈建议你先仔细阅读论文熟悉我们的模型结构，对运行使用大有裨益。
+我们强烈建议你先仔细阅读论文熟悉我们的模型结构，这会对运行使用大有裨益。
 <p align="center">
 <img src="files/architecture_v5.png" width="960">   
 </p>
@@ -176,7 +176,7 @@ pip install -r requirements.txt
 ## <span id='usage_zh'>运行使用</span>
 #### 我们提供以下两种方式运行：
 - **基础命令行模式** 用来批处理测试整个文件夹的图片 
-- **绘画GUI工具模式** 用来创作
+- **绘画GUI工具模式** 用来实现交互式创作
 
 首先，请耐心地按照以下步骤做准备：
 1. 在这里下载你想要的预训练模型文件：<a href="https://drive.google.com/open?id=1Oc-MZ0O2sZszes2_QF12dflDp6uIBpGR" target="_blank">Google Drive</a> | <a href="https://pan.baidu.com/s/1oX7ckJrOozA7oYwzeFHhSA" target="_blank">Baidu</a> (提取码: 9qn1)
@@ -184,7 +184,7 @@ pip install -r requirements.txt
 现在你的目录应该像这样： `./models/celeba/<xxxxx.pth>`
 3. 完成上面的基础环境和第三方库安装
 
-#### 啦啦啦啦，准备工作已完成，阅读[用户手册](USAGE.md#jump_zh)来开始运行程序咯~
+#### 啦啦啦啦，到这里准备工作就完成啦，接下来需要阅读[用户手册](USAGE.md#jump_zh)来运行程序~
 
 Acknowledgment
 -----
