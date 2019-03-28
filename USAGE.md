@@ -68,7 +68,7 @@ Command | Meaning
 `-c` or `--canny` | *Hyperparameter:* sigma of canny (default=3)
 `-k` or `--kmeans` | *Hyperparameter:* color cluster numbers of kmeans (default=3)
 
-If everything is loaded successfully, a window shows as below:
+If everything is loaded successfully, a window will show as below:
  
 <p align="center">
 <img src="files/tool_1.png" width="400">
@@ -80,8 +80,9 @@ The drawing function in OpenCV is awful, which is not suitable for painting. The
 both lead to the awful edges.
 
 2. **Drawing from color domain and edge (Recommended).** <br>
-We strongly recommend you to draw from this mode. We provide some anime edges and color domains drawn by myself in `./examples/getchu`. <br>
-You can get more edges and color domains by yourself using the **Command Line Mode** above. The testing results contain extracted edges and color domains by default (`DEBUG: 1` in `config.yml`).
+We strongly recommend you to start drawing using this mode. Some anime edges and color domains are provided drawn by myself in `./examples/getchu`. If you use examples from `./examples/getchu`, you need to run the corresponding command: python tool_draw.py -p models/getchu-anime -r <br>
+You can also get more edges and color domains by yourself using the **Command Line Mode** above. The testing results contain extracted edges and color domains by default (`DEBUG: 1` in `config.yml`). If you are not interested in the edges and color domains drawn by myself, using the edges and color domains from testing results may be a good choice.
+
 
 <p align="center">
 <img src="files/mode2.gif" width="400">   
@@ -97,6 +98,10 @@ the sparsity of Canny and K-means (both default=3).
 </p>
 
 Four windows will show up, one for color domain, one for edge, one for output and a pane. Switch your typewriting into ENG first.
+
+**Please read the instructions below carefully**
+
+(***Note that***: at the beginning, the output window is dark, you can press the keyboard ` g ` for the initial generated output. In the subsequent drawing process, press the keyboard ` g ` to view the real-time output changes based on *2 nd Generating Phase*.)
 
 Key | Description
 -----|------
@@ -122,7 +127,7 @@ Key `q` | To quit
 ## 简介
 #### 我提供以下两种方式运行:
 1. **基础命令行模式** 用来批处理测试整个文件夹的图片 
-2. **绘画GUI工具模式** 用来创作
+2. **绘画GUI工具模式** 用来进行交互式的创作
 
 记住，每个模型有它自己的单独文件夹，里面包含了该模型自己相应的配置文件`config.yml`和模型权重文件`xxx.pth`。
 我们假定你已经完成了README里的准备工作。
@@ -184,9 +189,9 @@ python tool_draw.py -p models/celeba -r
 都会让线条很差，而模型是很看重线条质量的。所以可以多看看canny算法抽出来的和我画的线条是咋样的。
 
 2. **从 边缘和色块 开始(推荐)** <br>
-我们强烈推荐你从这个开始绘画。`./examples/getchu`文件夹下包含了我画的
-一些动漫的线条和色块，可以直接读取使用。<br>
-当然，你可以使用上面说的**命令行模式**去测试数据集，默认输出是带边缘和色块的~(在 `config.yml`里：`DEBUG: 1` )
+我们强烈推荐你从这个开始绘画。`./examples/getchu`文件夹下包含了我画的一些线条和色块素材可以直接读取使用。 
+**注意**：如果使用的是`./examples/getchu`文件夹中样例，需要使用对应的 python tool_draw.py -p models/getchu-anime -r 命令语句。<br>
+当然，如果你不喜欢我自己画的线条和色块素材，也可以使用上面说的**命令行模式**去获得数据集测试结果，默认的测试输出中是含有自动抽取出的边缘和色块的~(在 `config.yml`里：`DEBUG: 1` )。可以在这些抽取出的边缘和色块基础上进行创作。
 
 <p align="center">
 <img src="files/mode2.gif" width="400">   
@@ -202,6 +207,10 @@ python tool_draw.py -p models/celeba -r
 
 下一步，会有四个窗口出现，分别是边缘，色块（带边缘的），输出和调色盘。<br>
 在边缘窗口绘画的边缘会实时反馈到色块窗口中，在色块窗口中涂色。技巧：色块窗口中按住Alt移动鼠标可以吸取颜色。
+
+**请仔细阅读下方的按键说明**<br>
+
+(***特别提示***：*开始时output窗口一片漆黑，按键盘 `g`（英文模式下）得到初始输出结果。在后续绘图过程中，按键盘 `g`可以实时查看基于*2nd Generating Phase*的输出结果的变化。*)<br>
 
 按键 | 说明
 -----|------
