@@ -80,8 +80,11 @@ The drawing function in OpenCV is awful, which is not suitable for painting. The
 both lead to the awful edges.
 
 2. **Drawing from color domain and edge (Recommended).** <br>
-We strongly recommend you to start drawing using this mode. Some anime edges and color domains are provided drawn by myself in `./examples/getchu`. If you use examples from `./examples/getchu`, you need to run the corresponding command: python tool_draw.py -p models/getchu-anime -r <br>
-You can also get more edges and color domains by yourself using the **Command Line Mode** above. The testing results contain extracted edges and color domains by default (`DEBUG: 1` in `config.yml`). If you are not interested in the edges and color domains drawn by myself, using the edges and color domains from testing results may be a good choice.
+We strongly recommend you to start drawing using this mode. Some anime edges and color domains are provided drawn by myself in `./examples/getchu`. If you use examples from `./examples/getchu`, you need to run the corresponding command:
+  ```bash
+  python tool_draw.py -p models/getchu-anime -r 
+  ```
+>>You can also get more edges and color domains by yourself using the **Command Line Mode** above. The testing results contain extracted edges and color domains by default (`DEBUG: 1` in `config.yml`). If you are not interested in the edges and color domains drawn by myself, using the edges and color domains from testing results may be a good choice.
 
 
 <p align="center">
@@ -190,8 +193,11 @@ python tool_draw.py -p models/celeba -r
 
 2. **从 边缘和色块 开始(推荐)** <br>
 我们强烈推荐你从这个开始绘画。`./examples/getchu`文件夹下包含了我画的一些线条和色块素材可以直接读取使用。 
-**注意**：如果使用的是`./examples/getchu`文件夹中样例，需要使用对应的 python tool_draw.py -p models/getchu-anime -r 命令语句。<br>
-当然，如果你不喜欢我自己画的线条和色块素材，也可以使用上面说的**命令行模式**去获得数据集测试结果，默认的测试输出中是含有自动抽取出的边缘和色块的~(在 `config.yml`里：`DEBUG: 1` )。可以在这些抽取出的边缘和色块基础上进行创作。
+**注意**：如果使用的是`./examples/getchu`文件夹中样例，需要使用对应的命令语句。
+```bash
+python tool_draw.py -p models/getchu-anime -r
+```
+>>当然，如果你不喜欢我自己画的线条和色块素材，也可以使用上面说的**命令行模式**去获得数据集测试结果，默认的测试输出中是含有自动抽取出的边缘和色块的~(在 `config.yml`里：`DEBUG: 1` )。可以在这些抽取出的边缘和色块基础上进行创作。
 
 <p align="center">
 <img src="files/mode2.gif" width="400">   
