@@ -104,7 +104,8 @@ Four windows will show up, one for color domain, one for edge, one for output an
 
 **Please read the instructions below carefully**
 
-(***Note that***: at the beginning, the output window is dark, you can press the keyboard ` g ` for the initial generated output. In the subsequent drawing process, press the keyboard ` g ` to view the real-time output changes based on *2 nd Generating Phase*.)
+(***Note that***: at the beginning, the output window is dark, you can press the keyboard ` g ` for the initial generated output. 
+In the subsequent drawing process, press the keyboard ` g ` to view the real-time output changes based on *2nd Generating Phase*.)
 
 Key | Description
 -----|------
@@ -116,6 +117,7 @@ Key `]` | To make the brush thickness larger
 Key `g` | To reconstruct the image from edge and color domain
 Key `u` | To refine the output only when `-r` is added in command line
 Key `Alt` | To absorb mouse pointer color in color domain (the mouse must be moving at the same time)
+Key `l` | To make the output lighter (can be pressed continuously) 
 Key `x` | To save the binary edge
 Key `c` | To save the color domain
 Key `s` | To save the output
@@ -166,7 +168,8 @@ Key `q` | To quit
 - （可选）可改的配置参数：`DEBUG`, `INPUT_SIZE`, `SIGMA` 和 `KM`. 具体含义请看`config.yml`。
 
 ## 2.绘画GUI工具模式
-我们使用OpenCv和easygui做了一个简单的交互式绘图demo，README中已经展示过了。<br>
+我们使用`OpenCV`和`easygui`做了一个简单的交互式绘图demo，`README`中已经展示过了。
+此论文demo仅推荐给不会绘画的人试玩（比如我），远远未达到辅助专业人士绘图的程度。<br>
 <br>
 **重要**： 尺寸为128的OpenCV窗口太小了，不好绘画，强烈建议win10的你在显示设置-->缩放与布局 调整到150%+
 
@@ -197,7 +200,8 @@ python tool_draw.py -p models/celeba -r
 ```bash
 python tool_draw.py -p models/getchu-anime -r  
 ```
-当然，如果你不喜欢我自己画的线条和色块素材，也可以使用上面说的**命令行模式**去获得数据集测试结果，默认的测试输出中是含有自动抽取出的边缘和色块的~(在 `config.yml`里：`DEBUG: 1` )。可以在这些抽取出的边缘和色块基础上进行创作。
+当然，如果你不喜欢我自己画的线条和色块素材，也可以使用上面说的**命令行模式**去获得数据集测试结果，默认的测试输出中是含有自动抽取出的边缘和色块的~
+(在 `config.yml`里：`DEBUG: 1` )。可以在这些抽取出的边缘和色块基础上进行创作。
 
 <p align="center">
 <img src="files/mode2.gif" width="400">   
@@ -211,8 +215,10 @@ python tool_draw.py -p models/getchu-anime -r
 <img src="files/mode3.gif" width="400">   
 </p>
 
-下一步，会有四个窗口出现，分别是边缘，色块（带边缘的），输出和调色盘。<br>
-在边缘窗口绘画的边缘会实时反馈到色块窗口中，在色块窗口中涂色。技巧：色块窗口中按住Alt移动鼠标可以吸取颜色。
+<br>
+
+下一步，会有四个窗口出现，分别是**边缘，色块（带边缘的），输出和调色盘**。<br>
+在边缘窗口绘画的边缘会实时反馈到色块窗口中，在色块窗口中涂色。<br>
 
 **请仔细阅读下方的按键说明**<br>
 
@@ -228,7 +234,13 @@ python tool_draw.py -p models/getchu-anime -r
 键盘 `g` | 从边缘和色块重建图像（*2nd Generating Phase*)
 键盘 `u` | 精修图像 （*3rd Refinement Phase* 仅当命令行中加了`-r`参数时)
 键盘 `Alt` | 吸管：色块窗口中按住Alt移动鼠标可以吸取颜色
+键盘 `l` | 输出图片增加亮度（可连续按）
 键盘 `x` | 保存边缘图像
 键盘 `c` | 保存色块
 键盘 `s` | 保存输出
 键盘 `q` | 退出
+
+技巧：
+
+- 色块窗口中按住Alt移动鼠标可以吸取颜色。
+- 有时简陋稀疏的edge效果更好
