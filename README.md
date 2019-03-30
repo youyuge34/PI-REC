@@ -57,8 +57,7 @@ PI-REC
 
 #### Tool operation
 <p align="center" class="half">
-<img src="files/demo1.gif" width="380">   
-<img src="files/demo2.gif" width="380">
+<img src="files/demo_getchu_mid.gif">   
 </p>
 
 <br>
