@@ -50,16 +50,16 @@ PI-REC
 <img src="files/edit.jpg" width="840">
 </p>
 <p align="center" class="third">
-<img src="files/inter1.gif" width="224" height="112">
-<img src="files/inter2.gif" width="224" height="112">
-<img src="files/inter3.gif" width="224" height="112">
+<img src="files/demo_inter_mid.gif" >
 </p>
 
 #### Tool operation
 <p align="center" class="half">
 <img src="files/demo_getchu_mid.gif">   
 </p>
-
+<p align="center" class="half">
+<img src="files/demo_celeba_mid.gif">   
+</p>
 <br>
 <br>
 
