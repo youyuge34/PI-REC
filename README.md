@@ -20,7 +20,7 @@ PI-REC
 -----
 
 <p align="center">
-<img src="files/banner2.png" width="720" height="240">
+<img src="files/banner3.png" width="720" >
 </p>
 
 <p align="center">
