@@ -30,10 +30,10 @@ PI-REC
     <em>I dreamed about becoming a painter. </em>
 </p>
 <p align="center">
-    <em>With PI-REC, we make this dream come true. </em>
+    <em>With PI-REC, we realize our dream. </em>
 </p>
 <p align="center">
-    <em>It is for you, for everyone.</em>
+    <em>For you, for everyone.</em>
 </p>
 
 -----
