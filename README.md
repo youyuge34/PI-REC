@@ -189,6 +189,11 @@ pip install -r requirements.txt
 
 #### 啦啦啦啦，到这里准备工作就完成啦，接下来需要阅读[用户手册](USAGE.md#jump_zh)来运行程序~
 
+<br>
+<br>
+
+------
+
 Acknowledgment
 -----
 Code structure is modified from [Anime-InPainting](https://github.com/youyuge34/Anime-InPainting), which is based on [Edge-Connect](https://github.com/knazeri/edge-connect).
