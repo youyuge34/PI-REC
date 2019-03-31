@@ -67,7 +67,9 @@ Introduction
 -----
 
 We propose a universal image reconstruction method to represent detailed images purely from binary sparse edge and flat color domain.
-Here is the open source code and the drawing tool.<br>
+Here is the open source code and the drawing tool.
+Learn more about related works here --> [image-to-image papers collection](https://github.com/lzhbrian/image-to-image-papers).<br>
+
 *\*The codes of training for release are no completed yet, also waiting for release license of lab.* <br>   
 **Find more details in our paper: [Paper on arXiv](https://arxiv.org/abs/1903.10146)**<br>
 <br>
@@ -134,9 +136,9 @@ Demo演示
 
 我们提出了一种基于GAN的渐进式训练方法 PI-REC，它能从超稀疏二值边缘以及色块中还原重建真实图像。
 我们的论文重心是在超稀疏信息输入的还原重建上，并非自动绘画。
-总之，这个论文项目属于*图像重建，图像翻译，条件图像生成，AI自动绘画*的前沿交叉领域，而非简单的以图搜图。阅读论文中的
-Related Work部分可以了解更多相关。<br>
-这里包含了测试代码以及交互式绘画工具。此论文demo仅推荐给不会绘画的人试玩（比如我），远远未达到辅助专业人士绘图的程度。<br>
+总之，PI-REC论文/项目属于*图像重建，图像翻译，条件图像生成，AI自动绘画*的前沿交叉领域的最新产出，而非简单的以图搜图等等。阅读论文中的
+Related Work部分或 [image-to-image论文整合项目](https://github.com/lzhbrian/image-to-image-papers)以了解更多。<br>
+**注意**：这里包含了论文代码以及交互式绘画工具。此论文demo仅推荐给不会绘画的人试玩（比如我），或给予相关领域科研人员参考。远远未达到民用或辅助专业人士绘图的程度。<br>
 <br>
 *\*由于训练过程过于复杂，用于训练的发布版代码还未完成* <br>   
 **在我们的论文中你可以获得更多信息(强烈推荐阅读): [Paper on arXiv](https://arxiv.org/abs/1903.10146)**<br>
