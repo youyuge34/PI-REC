@@ -141,7 +141,8 @@ Related Work部分或 [image-to-image论文整合项目](https://github.com/lzhb
 **注意**：这里包含了论文代码以及交互式绘画工具。此论文demo仅推荐给不会绘画的人试玩（比如我），或给予相关领域科研人员参考。远远未达到民用或辅助专业人士绘图的程度。<br>
 <br>
 *\*由于训练过程过于复杂，用于训练的发布版代码还未完成* <br>   
-**在我们的论文中你可以获得更多信息: [Paper on arXiv (推荐)](https://arxiv.org/abs/1903.10146) | [机器之心-中文新闻稿](https://www.jiqizhixin.com/articles/2019-04-03-4)**<br>
+**在我们的论文中你可以获得更多信息: [Paper on arXiv (推荐)](https://arxiv.org/abs/1903.10146) | [机器之心-中文新闻稿](https://www.jiqizhixin.com/articles/2019-04-03-4)** | **[b站中文视频教程(有福利?)](https://www.bilibili.com/video/av48420057/)**
+<br>
 <br>
 
 论文概览
