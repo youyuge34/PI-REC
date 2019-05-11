@@ -55,7 +55,7 @@ Phase | Command | Dataset loc | Description
 
 ## 2.Drawing GUI Mode
 This mode is a simple interactive demo written by OpenCV and easygui, which has been shown before.<br><br>
-**IMPORTANT**: The OpenCV window size of 128 is too small to draw, you can resize window to zoom the drawing or output panel.
+**IMPORTANT**: The OpenCV window size of 128 is too small to draw, you can use mouse to resize  the drawing or output window.
 
 ```bash
 python tool_draw.py -p models/celeba -r
@@ -105,13 +105,13 @@ Four windows will show up, one for color domain, one for edge, one for output an
 **Please read the instructions below carefully**
 
 (***Note that***: at the beginning, the output window is dark, you can press the keyboard ` g ` for the initial generated output. 
-In the subsequent drawing process, press the keyboard ` g ` to view the real-time output changes based on *2nd Generating Phase*.)
+In the subsequent drawing process, press the keyboard ` g ` to view the real-time output changes based on *2nd Generating Phase*. If you think the window size is too small to draw, you can use the mouse to resize the drawing and output window.)
 
 Key | Description
 -----|------
 Mouse `Left` | Draw
 Mouse `Right` | Erase
-Key `h` | Show the help message box.
+Key `h` | To show the help message box.
 Key `[` | To make the brush thickness smaller
 Key `]` | To make the brush thickness larger
 Key `g` | To reconstruct the image from edge and color domain
@@ -171,7 +171,7 @@ Key `q` | To quit
 我们使用`OpenCV`和`easygui`做了一个简单的交互式绘图demo，`README`中已经展示过了。
 此论文demo仅推荐给不会绘画的人试玩（比如我），远远未达到辅助专业人士绘图的程度。<br>
 <br>
-**重要**： 尺寸为128的OpenCV窗口太小了，不好绘画，建议透过鼠标来调整绘图与输出窗口大小。
+**重要**： 尺寸为128的OpenCV窗口太小了，不好绘画，建议使用鼠标来调整绘图与输出窗口大小。
 
 ```bash
 python tool_draw.py -p models/celeba -r
@@ -222,7 +222,7 @@ python tool_draw.py -p models/getchu-anime -r
 
 **请仔细阅读下方的按键说明**<br>
 
-(***特别提示***：*开始时output窗口一片漆黑，按键盘 `g`（英文模式下）得到初始输出结果。在后续绘图过程中，按键盘 `g`可以实时查看基于*2nd Generating Phase*的输出结果的变化。*)<br>
+(***特别提示***：*开始时output窗口一片漆黑，按键盘 `g`（英文模式下）得到初始输出结果。在后续绘图过程中，按键盘 `g`可以实时查看基于*2nd Generating Phase*的输出结果的变化。如果觉得窗口太小，可以使用鼠标拖动画图和输出窗口的大小* )<br>
 
 按键 | 说明
 -----|------
