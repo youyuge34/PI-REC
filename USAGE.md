@@ -55,7 +55,7 @@ Phase | Command | Dataset loc | Description
 
 ## 2.Drawing GUI Mode
 This mode is a simple interactive demo written by OpenCV and easygui, which has been shown before.<br><br>
-**IMPORTANT**: The OpenCV window size of 128 is too small to draw, under Win10 we strongly recommend you to change the scale and layout to 150% in the display setting.  
+**IMPORTANT**: The OpenCV window size of 128 is too small to draw, you can resize window to zoom the drawing or output panel.
 
 ```bash
 python tool_draw.py -p models/celeba -r
@@ -171,7 +171,7 @@ Key `q` | To quit
 我们使用`OpenCV`和`easygui`做了一个简单的交互式绘图demo，`README`中已经展示过了。
 此论文demo仅推荐给不会绘画的人试玩（比如我），远远未达到辅助专业人士绘图的程度。<br>
 <br>
-**重要**： 尺寸为128的OpenCV窗口太小了，不好绘画，强烈建议win10的你在显示设置-->缩放与布局 调整到150%+
+**重要**： 尺寸为128的OpenCV窗口太小了，不好绘画，建议透过鼠标来调整绘图与输出窗口大小。
 
 ```bash
 python tool_draw.py -p models/celeba -r
