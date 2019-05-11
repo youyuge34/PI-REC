@@ -339,9 +339,9 @@ if __name__ == '__main__':
         exit(0)
 
     # input and output windows
-    cv.namedWindow('edge')
-    cv.namedWindow('color_domain')
-    cv.namedWindow('output')
+    cv.namedWindow('edge', cv.WINDOW_NORMAL)
+    cv.namedWindow('color_domain', cv.WINDOW_NORMAL)
+    cv.namedWindow('output', cv.WINDOW_NORMAL)
     cv.setMouseCallback('edge', onmouse_edge)
     cv.setMouseCallback('color_domain', onmouse_color_domain)
     cv.moveWindow('color_domain', edge.shape[1] + 20, 90)
