@@ -69,6 +69,7 @@ drawing_edge_r = False
 drawing_color_domain_l = False
 drawing_color_domain_r = False
 value = DRAW_MASK
+eraser_mode = False
 THICKNESS = -1  # solid color_domain circle 实心圆
 
 
@@ -87,7 +88,7 @@ def onmouse_color_domain(event, x, y, flags, param):
     # print(x,y)
 
     # draw touchup curves
-    if event == cv.EVENT_LBUTTONDOWN:
+    if event == cv.EVENT_LBUTTONDOWN and not eraser_mode:
         drawing_color_domain_l = True
         cv.circle(color_domain, (x, y), radius, PANE, THICKNESS, lineType=cv.LINE_4)
 
@@ -98,14 +99,14 @@ def onmouse_color_domain(event, x, y, flags, param):
         drawing_color_domain_l = False
         cv.circle(color_domain, (x, y), radius, PANE, THICKNESS, lineType=cv.LINE_4)
 
-    elif event == cv.EVENT_RBUTTONDOWN:
+    elif event == cv.EVENT_RBUTTONDOWN or (event == cv.EVENT_LBUTTONDOWN and eraser_mode):
         drawing_color_domain_r = True
         cv.circle(color_domain, (x, y), radius, WHITE, THICKNESS, lineType=cv.LINE_AA)
 
     elif drawing_color_domain_r is True and event == cv.EVENT_MOUSEMOVE:
         cv.circle(color_domain, (x, y), radius, WHITE, THICKNESS, lineType=cv.LINE_AA)
 
-    elif drawing_color_domain_r is True and event == cv.EVENT_RBUTTONUP:
+    elif drawing_color_domain_r is True and (event == cv.EVENT_RBUTTONUP or event == cv.EVENT_LBUTTONUP):
         drawing_color_domain_r = False
         cv.circle(color_domain, (x, y), radius, WHITE, THICKNESS, lineType=cv.LINE_AA)
 
@@ -128,7 +129,7 @@ def onmouse_edge(event, x, y, flags, param):
     # print('x:',x,'  y:', y)
 
     # draw touchup curves
-    if event == cv.EVENT_LBUTTONDOWN:
+    if event == cv.EVENT_LBUTTONDOWN and not eraser_mode:
         drawing_edge_l = True
         # cv.circle(edge, (x, y), 1, WHITE, THICKNESS, lineType=cv.LINE_AA)
         edge[y, x] = 255
@@ -144,14 +145,14 @@ def onmouse_edge(event, x, y, flags, param):
         # cv.circle(edge, (x, y), 1, WHITE, THICKNESS, lineType=cv.LINE_AA)
         edge[y, x] = 255
 
-    elif event == cv.EVENT_RBUTTONDOWN:
+    elif event == cv.EVENT_RBUTTONDOWN or (event == cv.EVENT_LBUTTONDOWN and eraser_mode):
         drawing_edge_r = True
         cv.circle(edge, (x, y), radius, BLACK, THICKNESS, lineType=cv.LINE_AA)
 
     elif drawing_edge_r is True and event == cv.EVENT_MOUSEMOVE:
         cv.circle(edge, (x, y), radius, BLACK, THICKNESS, lineType=cv.LINE_AA)
 
-    elif drawing_edge_r is True and event == cv.EVENT_RBUTTONUP:
+    elif drawing_edge_r is True and (event == cv.EVENT_RBUTTONUP or event == cv.EVENT_LBUTTONUP):
         drawing_edge_r = False
         cv.circle(edge, (x, y), radius, BLACK, THICKNESS, lineType=cv.LINE_AA)
 
@@ -444,5 +445,7 @@ if __name__ == '__main__':
                 print("\nFinished!")
         elif k == ord('l'):
             output = lighter(output)
+        elif k == ord('e'):
+            eraser_mode = not eraser_mode
 
     cv.destroyAllWindows()

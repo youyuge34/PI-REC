@@ -109,8 +109,9 @@ In the subsequent drawing process, press the keyboard ` g ` to view the real-tim
 
 Key | Description
 -----|------
-Mouse `Left` | Draw
+Mouse `Left` | Draw, or erase when in eraser mode
 Mouse `Right` | Erase
+Key `e` | To toggle eraser mode on or off
 Key `h` | To show the help message box.
 Key `[` | To make the brush thickness smaller
 Key `]` | To make the brush thickness larger
