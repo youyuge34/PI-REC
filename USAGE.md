@@ -111,7 +111,7 @@ Key | Description
 -----|------
 Mouse `Left` | Draw, or erase when in eraser mode
 Mouse `Right` | Erase
-Key `e` | To toggle eraser mode on or off
+Key `e` | To toggle eraser mode on or off, the explanation is shown [here](https://github.com/youyuge34/PI-REC/pull/16) 
 Key `h` | To show the help message box.
 Key `[` | To make the brush thickness smaller
 Key `]` | To make the brush thickness larger
@@ -230,6 +230,7 @@ python tool_draw.py -p models/getchu-anime -r
 鼠标 `左键` | 绘制
 鼠标 `右键` | 清除
 键盘 `h` | 显示帮助信息
+键盘 `e` | 擦除模式，开启后鼠板左键为擦除功能，添加原因[在此](https://github.com/youyuge34/PI-REC/pull/16)
 键盘 `[` | 画笔粗细-1
 键盘 `]` | 画笔粗细+1
 键盘 `g` | 从边缘和色块重建图像（*2nd Generating Phase*)
