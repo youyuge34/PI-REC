@@ -6,3 +6,5 @@ opencv-python==3.4.5.20
 easygui==0.98.1
 pyaml
 future==0.16.0
+scikit-image
+pyparsing
