@@ -185,7 +185,8 @@ pip install -r requirements.txt
 
 首先，请耐心地按照以下步骤做准备：
 1. 在这里下载你想要的预训练模型文件：<a href="https://drive.google.com/open?id=1Oc-MZ0O2sZszes2_QF12dflDp6uIBpGR" target="_blank">Google Drive</a> | <a href="https://pan.baidu.com/s/1oX7ckJrOozA7oYwzeFHhSA" target="_blank">Baidu</a> (提取码: 9qn1)
-2. 解压，放到目录`./models`下<br>
+> 更新：2021.4 baidu网盘和谐了我的权重文件，已无法分享，请自行前往Google drive~
+3. 解压，放到目录`./models`下<br>
 现在你的目录应该像这样： `./models/celeba/<xxxxx.pth>`
 3. 完成上面的基础环境和第三方库安装
 
