@@ -211,3 +211,16 @@ Code structure is modified from [Anime-InPainting](https://github.com/youyuge34/
   year={2019}
 }
 ```
+
+
+build by `docker build --progress=plain -t pirec .`, run by 
+`docker run -u=$(id -u $USER):$(id -g $USER) -e DISPLAY=$DISPLAY -e MPLBACKEND='Agg' -v /tmp/.X11-unix:/tmp/.X11-unix:rw --gpus=all pirec python tool_draw.py -p models/getchu-anime -r`
+
+on windows host, run x server, e.g. https://medium.com/@potatowagon/how-to-use-gui-apps-in-linux-docker-container-from-windows-host-485d3e1c64a3
+
+
+testing basic python gui stuff before we make this all work:
+```bash
+docker build -f Dockerfile_tkinter --progress=plain -t tkinter_in_docker .
+docker run -u=$(id -u $USER):$(id -g $USER) -e PYTHONIOENCODING=UTF-8 -e DISPLAY=$DISPLAY -e MPLBACKEND='Agg' -v /tmp/.X11-unix:/tmp/.X11-unix:rw --gpus=all pirec python tool_draw.py -p models/getchu-anime -r
+```

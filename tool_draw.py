@@ -36,12 +36,11 @@ Key `q` | To quit
 ===============================================================================
 """
 
-# Python 2/3 compatibility
-from __future__ import print_function
-
 import argparse
 import glob
 
+# we need to import tkinter before easygui, because reasons https://stackoverflow.com/questions/66355637/pycharm-error-with-easygui-no-module-named-global-state
+import tkinter
 from easygui import *
 import numpy as np
 import cv2 as cv

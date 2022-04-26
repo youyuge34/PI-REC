@@ -82,7 +82,7 @@ both lead to the awful edges.
 2. **Drawing from color domain and edge (Recommended).** <br>
 We strongly recommend you to start drawing using this mode. Some anime edges and color domains are provided drawn by myself in `./examples/getchu`. If you use examples from `./examples/getchu`, you need to run the corresponding command:  
   ```bash
-  python tool_draw.py -p models/getchu-anime -r   
+  python tool_draw.py -p models/getchu-anime -r
   ```
 You can also get more edges and color domains by yourself using the **Command Line Mode** above. The testing results contain extracted edges and color domains by default (`DEBUG: 1` in `config.yml`). If you are not interested in the edges and color domains drawn by myself, using the edges and color domains from testing results may be a good choice.
 
