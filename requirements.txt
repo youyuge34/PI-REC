@@ -8,3 +8,4 @@ pyaml
 future==0.16.0
 scikit-image
 pyparsing
+torchvision==0.2.2
