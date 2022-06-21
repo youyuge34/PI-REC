@@ -1,7 +1,7 @@
 matplotlib==2.2.3
 scipy==1.0.1
 pillow==5.4.0
-numpy==1.15.4
+numpy==1.22.0
 opencv-python==3.4.5.20
 easygui==0.98.1
 pyaml
